@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+{%block content%}
+    <h1>FUTUREMAIL</h1>
+    <h2>Write Letters To Your FutureSelf.</h2>
+    
+    
+    <div class = "MainBox">
+    <form method="POST" action="{% url 'MailRegister' %}"> 
+      {% csrf_token %}
+      <div class = "MsgBox">
+        <textarea type="text" placeholder="Enter your Message here" name='UserText1' required class = "Textdiv"></textarea><br>
+      </div>
+        <div class = "EmailBox">
+        <input type="email" placeholder="Enter your email address" name='Useremail1' required class = "Emaildiv"><br>
+        </div>
+        <div class = "ChoiceBox">
+        <label name="UserChoice" class="option">
+            <input type="radio" name="option" value="1DAY" class = "Choicediv" required >
+            1 Day
+          </label>
+          <label class="option">
+            <input type="radio" name="option" value="1WEEK" class = "Choicediv">
+            1 Week
+          </label>
+          <label class="option">
+            <input type="radio" name="option" value="1MONTH" class = "Choicediv">
+            1 Month
+          </label>
+          <label class="option">
+            <input type="radio" name="option" value="1YEAR" class = "Choicediv">
+            1 Year
+          </label>
+          <label class="option">
+            <input type="radio" name="option" value="5YEARS" class = "Choicediv">
+            5 YEARS
+          </label>
+          <label class = "option">
+            <input type="radio" name="option" value="10YEARS" class = "Choicediv">
+            10 YEARS
+          </label>
+           <br>
+        </div>
+        <div class="SendBox"><input type="submit" value="Send" class="SendDiv">
+        </div>
+    </form>   
+  </div>
+  
+{%endblock%}
