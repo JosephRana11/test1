@@ -4,6 +4,7 @@ from .models import MailData
 from django.http import HttpResponse
 from datetime import datetime , timedelta
 import calendar
+import time
 
 from .AutoMail import auto_func
 
@@ -58,4 +59,5 @@ def MailData_Register(request):
         context ={
             'Obj' : Obj
         }
-    return render(request , 'success.html' , context)
+    time.sleep(2)
+    return render(request, 'success.html' , context)
