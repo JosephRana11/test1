@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Data.views import  MailData_Register , home_page_view ,activate_script_view 
+from Data.views import  MailData_Register , home_page_view ,activate_script_view , About_view , FAQ_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('xyz/', admin.site.urls),
     path('SendMail/' , MailData_Register , name="MailRegister"),
     path('' , home_page_view , name = "MailData"),
     path('activate/' , activate_script_view),
+    path('About/' , About_view, name = "About"),
+    path('HowitWorks/' , FAQ_view , name = "FAQ")
 ]

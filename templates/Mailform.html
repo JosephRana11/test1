@@ -8,7 +8,7 @@
     <form method="POST" action="{% url 'MailRegister' %}"> 
       {% csrf_token %}
       <div class = "MsgBox">
-        <textarea type="text" placeholder="Enter your Message here" name='UserText1' required class = "Textdiv"></textarea><br>
+        <textarea type="text" placeholder="Write your Message here" name='UserText1' required class = "Textdiv"></textarea><br>
       </div>
         <div class = "EmailBox">
         <input type="email" placeholder="Enter your email address" name='Useremail1' required class = "Emaildiv"><br>

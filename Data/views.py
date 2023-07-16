@@ -11,9 +11,16 @@ from .AutoMail import auto_func
 def home_page_view(request):
     return render(request , 'MailForm.html')
 
+def About_view(request):
+    return render(request , 'About.html')
+
+def FAQ_view(request):
+    return render(request , 'HowItWorks.html')
+
 def activate_script_view(request):
     auto_func()
     return HttpResponse("Mail Automation Script Activated.You may exit now.")
+
 
 def MailData_Register(request):
     if request.method == 'POST':
