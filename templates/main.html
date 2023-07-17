@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,14 +18,21 @@
                 background: rgb(167, 195, 254);
                 background: linear-gradient(90deg, #f09058 0%,#f9ecfd 100%);
                 font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background-image: url('{%static "Data/bgx4.png"%}');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-attachment: fixed;
+
             }
+            
             p {
                 font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
             h1 {
                 text-align: center;
                 font-size: 60px;
-                margin-top: 7px;
+                margin-top: 12px;
             }
             h2 {
                 text-align: center;
@@ -99,6 +107,7 @@
                 display: flex;
                 justify-content: end;
                 padding-right: 5px;
+                margin-bottom: 2%;
 
             }
             .SendDiv:hover,
@@ -107,7 +116,7 @@
                 box-shadow: inset -3px -3px 7px #ffffffb2, inset 3px 3px 7px rgba(94, 104, 121, 0.945);
             }
             .SendDiv {
-                margin-top: 3px;
+                margin-top:5px; 
                 background-color: white;
                 color: grey;
                 border: none;
@@ -121,14 +130,14 @@
             .option {
                 padding-left: 30px;
                 margin-right: 8px;
-                color: grey;
+                color: rgb(20, 20, 20);
                 margin-top: 5px;
             }
             #clouds {
-                position: absolute;
-                z-index: 9;
+                position: relative;
                 bottom: 0;
                 left: 0;
+                z-index: -1;
             }
             .senttextbox {
                 margin-top: 40px;
@@ -289,6 +298,77 @@
                 width: 100%;
                 height: 90%;
             }
+            .card-specific{
+                margin-top: 8%;
+            }
+            @media only screen and (max-width: 767px) {
+                h1{
+                    font-size: 30px;
+                    padding-top: 7%;
+                }
+                h2{
+                    font-size: 20px;
+                }
+                .Textdiv{
+                    width: 300px;
+                    height: 150px;
+                    display: flex;
+                    justify-content: center; /* Horizontal centering */
+                    align-items: center; 
+                }
+                .MsgBox , .EmailBox{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 4%;
+                }
+                .Emaildiv{
+                    width: 300px;
+                    height: 30px;
+                }
+                .Emaildiv::placeholder  , .Textdiv::placeholder{
+                     font-size: small;
+                 }
+                .Choicediv{
+                    width: 10px;
+                    height: 10px;
+                    padding-left: 0px;
+                    font-size: small;   
+                }
+                .ChoiceBox{
+                    display: flex;
+                    max-width: 100%;
+                    justify-content: center;
+                }
+                .option{
+                    padding-left: 10px;
+                }
+                .SendDiv{
+                    width: 50px;
+                    height: 30px;
+                    margin-right: 7%;
+                    font-size: small;
+                }
+                .SendBox{
+                    display: flex;
+                    justify-content: end;
+                    justify-items: end;
+                    margin-top: 2%;
+                    margin-left: 5%;
+
+                }
+                .card {
+                  max-width: 80%;
+                  border: none;
+                  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.15);
+                  -webkit-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.15);
+                  -moz-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.15);
+                  border-radius: 1%;
+                  margin-top: 50px;
+                }
+                .cardAbout{
+                    margin-bottom: 6%;
+                }
+            }
         </style>
 
     </head>
@@ -345,29 +425,5 @@
             });
         </script>
         {%block content%}{% endblock %}
-
-        <svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 85 100" preserveaspectratio="none">
-            <path d="M-5 100 Q 0 20 5 100 Z" fill="white"/>
-            <path d="M0 100 Q 5 0 10 100" fill="white"/>
-            <path d="M5 100 Q 10 30 15 100" fill="white"/>
-            <path d="M10 100 Q 15 10 20 100" fill="white"/>
-            <path d="M15 100 Q 20 30 25 100" fill="white"/>
-            <path d="M20 100 Q 25 -10 30 100" fill="white"/>
-            <path d="M25 100 Q 30 10 35 100" fill="white"/>
-            <path d="M30 100 Q 35 30 40 100" fill="white"/>
-            <path d="M35 100 Q 40 10 45 100" fill="white"/>
-            <path d="M40 100 Q 45 50 50 100" fill="white"/>
-            <path d="M45 100 Q 50 20 55 100" fill="white"/>
-            <path d="M50 100 Q 55 40 60 100" fill="white"/>
-            <path d="M55 100 Q 60 60 65 100" fill="white"/>
-            <path d="M60 100 Q 65 50 70 100" fill="white"/>
-            <path d="M65 100 Q 70 20 75 100" fill="white"/>
-            <path d="M70 100 Q 75 45 80 100" fill="white"/>
-            <path d="M75 100 Q 80 30 85 100" fill="white"/>
-            <path d="M80 100 Q 85 20 90 100" fill="white"/>
-            <path d="M85 100 Q 90 50 95 100" fill="white"/>
-            <path d="M90 100 Q 95 25 100 100" fill="white"/>
-            <path d="M95 100 Q 100 15 105 100 Z" fill="white"/>
-        </svg>
     </body>
 </html>
